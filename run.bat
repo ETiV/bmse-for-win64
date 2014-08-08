@@ -1,4 +1,10 @@
 @echo off
-copy comdlg32.ocx mscomctl.ocx dx7vb.dll dx8vb.dll %SystemRoot%\SysWOW64
-regsvr32 dx7vb.dll
-regsvr32 dx8vb.dll
+cd /d %~dp0
+
+copy .\comdlg32.ocx %SystemRoot%\SysWOW64\
+copy .\mscomctl.ocx %SystemRoot%\SysWOW64\
+copy .\dx7vb.dll %SystemRoot%\SysWOW64\
+copy .\dx8vb.dll %SystemRoot%\SysWOW64\
+
+regsvr32 %SystemRoot%\SysWOW64\dx7vb.dll
+regsvr32 %SystemRoot%\SysWOW64\dx8vb.dll
